@@ -15,10 +15,9 @@
       <h1>{{ site.title }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 
-      <a href="/" class="btn">Home</a>
-      <a href="/about" class="btn">About</a>
-      <a href="/NicholasPuljicResume.pdf" class="btn">Resume</a>
-      <a href="/contact" class="btn">Contact</a>
+      {% for item in site.data.navigation %}
+      <a href="{{ item.url }}" alt="{{ item.title }}" class="btn">{{ item.title }}</a>
+      {% endfor %}
     </section>
 
     <section class="main-content">
